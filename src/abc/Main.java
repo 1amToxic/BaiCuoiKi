@@ -151,11 +151,11 @@ public class Main {
     public static void putData(){
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("SV.INP"));
-            oos.writeObject(new SinhVien(1000,"Lam","D17",8));
-            oos.writeObject(new SinhVien(1001,"Aam","D16",9));
-            oos.writeObject(new SinhVien(1000,"Zam","D17",6));         
-            oos.writeObject(new SinhVien(1003,"Zbm","D16",7));
-            oos.writeObject(new SinhVien(1000,"AAA","D17",10));
+            oos.writeObject(new SinhVien(1000,"Nguyen Lam","D17",9));
+            oos.writeObject(new SinhVien(1001,"Nguyen Aam","D16",9));
+            oos.writeObject(new SinhVien(1000,"Nam Zam","D17",9));         
+            oos.writeObject(new SinhVien(1003,"ZZZ AAA","D16",9));
+            oos.writeObject(new SinhVien(1000,"Nguyen Nam","D17",9));
             oos.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -235,8 +235,14 @@ class SortByName implements Comparator<SinhVien>{
 
     @Override
     public int compare(SinhVien o1, SinhVien o2) {
+        String str1[] = o1.getTen().split(" ");
+        String str2[] = o2.getTen().split(" ");
+        if(str1[st1r1.length-1].equals(str2[str2.length-1])){
+            return o2.getTen().compareTo(o1.getTen());
+        }
+        else return str1[str1.length-1].compareTo(str2[str2.length-1]);
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        return o2.getTen().compareTo(o1.getTen());
+        
     }
     
 }
