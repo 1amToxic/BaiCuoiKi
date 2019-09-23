@@ -122,6 +122,7 @@ public class Main {
                 case 4:{
                     Collections.sort(list,new SortByName());
                     Collections.sort(list,new SortByDTB());
+                    setXL(list);
                     putDataTo(list, "XEPLOAI.OUT");
                     readData("XEPLOAI.OUT");
                     break;
@@ -237,7 +238,7 @@ class SortByName implements Comparator<SinhVien>{
     public int compare(SinhVien o1, SinhVien o2) {
         String str1[] = o1.getTen().split(" ");
         String str2[] = o2.getTen().split(" ");
-        if(str1[st1r1.length-1].equals(str2[str2.length-1])){
+        if(str1[str1.length-1].equals(str2[str2.length-1])){
             return o2.getTen().compareTo(o1.getTen());
         }
         else return str1[str1.length-1].compareTo(str2[str2.length-1]);
