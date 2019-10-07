@@ -754,10 +754,7 @@ public class MainFrame extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    
-    
+    }    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ADDQL;
     private javax.swing.JTabbedPane BanDoc;
